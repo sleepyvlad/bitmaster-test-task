@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "rootDir": "./src",
+    "target": "ES5"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
