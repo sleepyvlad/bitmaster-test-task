@@ -1,2 +1,5 @@
 # bitmaster-test-task
-test task for bitmaster
+Для запуска:
+1. Установите зависимости коммандой yarn install
+2. Запустите проект коммандой yarn start
+
