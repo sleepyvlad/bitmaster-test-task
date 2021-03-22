@@ -10,15 +10,23 @@ module.exports = {
         use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
+        test: /\.css/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
         test: /\.tsx?$/,
         loader: "ts-loader",
       },
+      { test: /\.(png|jpe?g|gif)$/i, loader: "file-loader" },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: "babel-loader",
-          options: { presets: ["@babel/preset-env", "@babel/preset-react"] },
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+            plugins: ["react-hot-loader/babel"],
+          },
         },
       },
     ],
@@ -27,7 +35,7 @@ module.exports = {
     extensions: [".js", ".ts", ".tsx"],
   },
   entry: {
-    app: path.resolve("src", "index.tsx"),
+    app: ["react-hot-loader/patch", "./src"],
   },
   output: {
     path: path.resolve("build"),
